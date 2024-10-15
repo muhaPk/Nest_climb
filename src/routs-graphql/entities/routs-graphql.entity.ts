@@ -3,22 +3,16 @@ import { ObjectType, Field, Int, Float } from '@nestjs/graphql';
 @ObjectType()
 export class RoutsGraphql {
 
-  @Field(() => Int)
-  id: number
+  @Field()
+  id: string
 
   @Field()
-  name: string
+  title: string
 
   @Field()
-  color: string
-
-  @Field(() => Float)
-  price: number
+  content: string
 
   @Field()
   createAt: Date
-
-  @Field()
-  updateAt: Date
 
 }

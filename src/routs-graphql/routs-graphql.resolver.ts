@@ -1,12 +1,14 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { RoutesService } from '../routes/routes.service';
 import { RoutsGraphql } from './entities/routs-graphql.entity';
+import { PrismaService } from 'src/prisma.service';
 import { CreateRoutsGraphqlInput } from './dto/create-routs-graphql.input';
 import { UpdateRoutsGraphqlInput } from './dto/update-routs-graphql.input';
 
 @Resolver(() => RoutsGraphql)
 export class RoutsGraphqlResolver {
-  constructor(private readonly routsGraphqlService: RoutesService) {}
+  // constructor(private readonly routsGraphqlService: RoutesService) {}
+  constructor(private readonly routesService:RoutesService){}
 
   // @Mutation(() => RoutsGraphql)
   // createRoutsGraphql(@Args('createRoutsGraphqlInput') createRoutsGraphqlInput: CreateRoutsGraphqlInput) {
@@ -15,7 +17,7 @@ export class RoutsGraphqlResolver {
 
   @Query(() => [RoutsGraphql], { name: 'routsGraphql' })
   findAll() {
-    return this.routsGraphqlService.getRoutes();
+    return this.routesService.getRoutes();
   }
 
   // @Query(() => RoutsGraphql, { name: 'routsGraphql' })

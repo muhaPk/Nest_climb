@@ -12,10 +12,8 @@ type Query {
 }
 
 type RoutsGraphql {
-  color: String!
+  content: String!
   createAt: DateTime!
-  id: Int!
-  name: String!
-  price: Float!
-  updateAt: DateTime!
+  id: String!
+  title: String!
 }

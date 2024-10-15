@@ -5,7 +5,7 @@ import { RoutesService } from './routes.service';
 export class RoutesController {
   constructor(private readonly routesService: RoutesService) {}
 
-  @Get() // '' - root path, '/name' - root path + /name
+  @Get() // '' - root path, '/name' - root path/name
   getRoutes() {
     return this.routesService.getRoutes();
   }
